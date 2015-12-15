@@ -9,7 +9,7 @@ defmodule TimeService do
       worker(TimeService.Starter, [])
     ]
 
-    opts = [strategy: :one_for_one, name: SimplePlug.Supervisor]
+    opts = [strategy: :one_for_one, name: TimeService.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end
