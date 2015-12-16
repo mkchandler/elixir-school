@@ -6,7 +6,7 @@ defmodule TimeService.Router do
   plug :dispatch
 
   get "/" do
-    case Date.local |> DateFormat.format("{ISO}") do
+    case Date.universal |> DateFormat.format("{ISO}") do
       { :ok, current_time } ->
         send_resp(conn, 200, Poison.encode!(%{time: current_time}))
       { :error, reason } ->

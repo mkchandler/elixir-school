@@ -14,7 +14,7 @@ defmodule TimeServiceClient.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger, :httpoison]]
+    [applications: [:logger, :httpoison, :tzdata]]
   end
 
   # Dependencies can be Hex packages:
@@ -27,6 +27,8 @@ defmodule TimeServiceClient.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:httpoison, "~> 0.8.0"}]
+    [{:httpoison, "~> 0.8.0"},
+     {:poison, "~> 1.5"},
+     {:timex, "~> 0.19.2"}]
   end
 end
